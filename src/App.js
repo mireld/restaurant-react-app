@@ -1,22 +1,37 @@
-import logo from './logo.svg';
 import './App.css';
+import BookingForm from './components/booking-form'
+import Button from '@mui/material/Button';
+
 
 function App() {
+  let bookingInfo = {};
+  let setDisabled = true;
+
+  function retrieveInfo (value) {
+    bookingInfo = value;
+    console.log(bookingInfo.name);
+    setDisabled = bookingInfo.name !== "" ? false : true
+    console.log(setDisabled);
+  }
+
+  const handleClick = () => {
+    console.log('Soy el boton:');
+  }
+  
+
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>Reservaciones</h1>
+        <BookingForm setDataForm = {retrieveInfo}/>
+        <Button
+        disabled={setDisabled}
+        id = "bookingButon"
+        variant="contained"
+        onClick = {handleClick}
+        >Reservar
+        </Button>
       </header>
     </div>
   );

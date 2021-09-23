@@ -1,0 +1,12 @@
+#name: make reservation
+POST http://localhost:4000/reservations
+Content-Type: application/json
+
+{
+    "name": "David Mireles",
+    "email": "davidmirelesluis@gmail.com",
+    "personas": 6
+}
+
+###
+GET http://localhost:4000/reservations
