@@ -1,8 +1,10 @@
 import * as React from 'react'
 import BookingForm from './components/booking-form'
-import Button from '@mui/material/Button'
-import SendData from './functions/sendData'
+import Button from './components/button'
+// import useSendData from './hook/useSendData'
 import './App.css';;
+// import Button2 from './components/button'
+
 
 function App() {
   let bookingInfo = {};
@@ -13,22 +15,16 @@ function App() {
     setDisabled(bookingInfo.name && bookingInfo.mail && bookingInfo.phone && bookingInfo.people? false : true) 
   }
 
-  const handleClick = () => {
-    SendData(bookingInfo);
-  }
+  // const handleClick = () => {
+  //   SendData(bookingInfo);
+  // }
 
   return (
     <div className="App">
       <header className="App-header">
         <h1>Reservaciones</h1>
         <BookingForm setDataForm = {getFormInfo}/>
-        <Button
-        disabled={disabled}
-        id = "bookingButon"
-        variant="contained"
-        onClick = {handleClick}
-        >Reservar
-        </Button>
+        <Button setDisabled = {disabled} info = {bookingInfo} />
       </header>
     </div>
   );

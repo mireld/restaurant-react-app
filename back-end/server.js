@@ -2,7 +2,9 @@ const express = require('express');
 const app = express();
 const messageRoutes = require ('./messages');
 const PORT = 4000;
+const cors = require('cors');
 
+app.use(cors());
 app.use(express.json());
 app.use('/reservations', messageRoutes);
 
