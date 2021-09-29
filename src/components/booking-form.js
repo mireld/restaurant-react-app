@@ -1,6 +1,10 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
+// import AdapterDateFns from '@mui/lab/AdapterDateFns';
+// import Stack from '@mui/material/Stack';
+// import LocalizationProvider from '@mui/lab/LocalizationProvider';
+// import DateTimePicker from '@mui/lab/DateTimePicker';
 
 export default function FormProps({setDataForm}) {
     const [data, setData] = React.useState({
@@ -8,6 +12,7 @@ export default function FormProps({setDataForm}) {
         "mail": "",
         "phone" : "",
         "people" : 0
+        // "bookingDate" : new Date()
     })
 
     setDataForm(data);
@@ -18,6 +23,7 @@ export default function FormProps({setDataForm}) {
             "mail": data.mail,
             "phone" : data.phone,
             "people" : data.people
+            // "bookingDate" : data.bookingDate
         }
         if (e.target.id === 'nameIn'){
             dataForm.name = e.target.value
@@ -31,6 +37,9 @@ export default function FormProps({setDataForm}) {
         if (e.target.id === 'peopleIn'){
             dataForm.people = e.target.value
         }
+        // if (e.target.id === 'dateIn'){
+        //     dataForm.bookingDate = e.target.value
+        // }
         setData(dataForm);
     }
     return (
@@ -72,6 +81,17 @@ export default function FormProps({setDataForm}) {
             }}
             onChange ={handleChange}
             />
+            {/* <LocalizationProvider dateAdapter={AdapterDateFns}>
+                <Stack spacing={1}>
+                    <DateTimePicker
+                    id = "dateIn"
+                    label="Date-Time picker"
+                    value={data.bookingDate}
+                    onChange={handleChange}
+                    renderInput={(params) => <TextField {...params} />}
+                    />
+         </Stack>
+            </LocalizationProvider> */}
         </div>
         </Box>
   );

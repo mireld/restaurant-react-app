@@ -1,12 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import Header from './components/header'
+import Intro from './components/intro'
 import App from './App';
+import Footer from './components/footer'
+import './index.css';
+import 'bulma/css/bulma.css'
 
 ReactDOM.render(
   <React.StrictMode>
-    <h1>Restaurate</h1>
+    <Header />
+    <Intro />
     <App />
+    <Footer />
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -20,11 +20,14 @@ router.post('/', async (req, res) => {
     const { name, mail, phone, people } = req.body;
     const id = uuidv4();
     const docRef = db.collection('reservations').doc(id);
+    const date = new Date()
     const dataForm = {
         name: name,
         email: mail,
         tel: phone,
-        personas: people
+        personas: people,
+        id,
+        date
     }
 
     await docRef.set(dataForm);
