@@ -1,4 +1,6 @@
 import React from 'react'
+import Pic from '../img/intro16-9.jpg'
+
 
 const intro = () => {
     return (
@@ -14,7 +16,7 @@ const intro = () => {
             </div>
         </div>
         <div className="column is-7">
-            <img src="../../img/intro16-9.jpg" alt="" />
+            <img src={Pic} alt="" />
         </div>
     </div>
     )

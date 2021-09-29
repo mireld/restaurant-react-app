@@ -1,4 +1,5 @@
 import React from 'react'
+import logo from '../img/banner sm.png'
 
 const footer = () => {
     return (
@@ -23,7 +24,7 @@ CP 25000
                 </p>
             </div>
             <div className="column is-right">
-                <img src="../../img/banner sm.png" alt="" />
+                <img src={logo} alt="" />
             </div>
 
         </div>

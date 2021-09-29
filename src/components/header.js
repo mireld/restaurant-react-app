@@ -1,13 +1,14 @@
 import React from 'react'
+import logo from '../img/Logo.png'
 // import '../../node_modules/bulma/css/bulma.css'
 
 const header = () => {
     return (
         <div>
-            <nav className="navbar" role="navigation" aria-label="main navigation">
-            <div className="navbar-brand">
-                <a className="navbar-item" href="https://bulma.io">
-                <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28"/>
+            <nav className="navbar is-large" role="navigation" aria-label="main navigation">
+            <div className="navbar-brand height-auto">
+                <a className="navbar-item" href="#" >
+                <img src={logo} width="80" height="200"/>
                 </a>
 
                 <a role="button" className="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -50,7 +51,7 @@ const header = () => {
                 </div> */}
             </div>
 
-                <div className="navbar-end">
+                {/* <div className="navbar-end">
                 <div className="navbar-item">
                     <div className="buttons">
                     <a className="button is-primary">
@@ -61,7 +62,7 @@ const header = () => {
                     </a>
                     </div>
                 </div>
-                </div>
+                </div> */}
             </div>
             </nav>
         </div>

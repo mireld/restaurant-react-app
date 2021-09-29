@@ -2,6 +2,7 @@ import * as React from 'react'
 import FormProps from './components/FormProps'
 import Button from '@mui/material/Button'
 import SendData from './functions/sendData'
+import BRLogo from './img/BRLogo.png'
 import './App.css';;
 
 function App() {
@@ -20,17 +21,25 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Reservaciones</h1>
-        <FormProps setDataForm = {getFormInfo}/>
-        <Button
-        disabled={disabled}
-        id = "bookingButon"
-        variant="contained"
-        onClick = {handleClick}
-        >Reservar
-        </Button>
-      </header>
+      <div class="columns">
+        <div class="column">
+          <img src={BRLogo} />
+        </div>
+        <div class="column is-7">
+          <header className="App-header">
+            <h1>Reservaciones</h1>
+            <FormProps setDataForm = {getFormInfo}/>
+            <Button
+            disabled={disabled}
+            id = "bookingButon"
+            variant="contained"
+            onClick = {handleClick}
+            >Reservar
+            </Button>
+          </header>
+        </div>
+    </div>
+      
     </div>
   );
 }
