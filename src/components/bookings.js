@@ -24,7 +24,7 @@ const bookings = () => {
                 
                     <div className="content">
                         Reserva hecha el día {element.date}, para {element.people} personas.
-                        <a href="#">#css</a> <a href="#">#responsive</a>
+                        
                         <br />
                         <time datetime="2016-1-1">{element.bookingDate}</time>
                     </div>

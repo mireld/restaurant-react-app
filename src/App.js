@@ -23,7 +23,7 @@ function App() {
     <div className="App">
       <div className="columns">
         <div className="column">
-          <img src={BRLogo} />
+          <img src={BRLogo} alt=""/>
         </div>
         <div className="column is-7">
           <header className="App-header">

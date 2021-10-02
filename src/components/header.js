@@ -3,7 +3,6 @@ import logo from '../img/Logo.png'
 import Intro from './intro'
 import App from '../App';
 import Footer from './footer'
-import Bookings from './bookings'
 import {
     BrowserRouter as Router,
     Switch,
@@ -18,11 +17,11 @@ const Header = () => {
             <div>
                 <nav className="navbar is-large" role="navigation" aria-label="main navigation">
                     <div className="navbar-brand height-auto">
-                        <a className="navbar-item" href="#" >
-                            <img src={logo} width="80" height="200"/>
+                        <a className="navbar-item"  href="/" >
+                            <img src={logo} width="80" height="200" alt=""/>
                         </a>
 
-                        <a role="button" className="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                        <a role="button" className="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" href="#navbarBasicExample">  
                             <span aria-hidden="true"></span>
                             <span aria-hidden="true"></span>
                             <span aria-hidden="true"></span>
