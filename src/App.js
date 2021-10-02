@@ -21,11 +21,11 @@ function App() {
 
   return (
     <div className="App">
-      <div class="columns">
-        <div class="column">
+      <div className="columns">
+        <div className="column">
           <img src={BRLogo} />
         </div>
-        <div class="column is-7">
+        <div className="column is-7">
           <header className="App-header">
             <h1>Reservaciones</h1>
             <FormProps setDataForm = {getFormInfo}/>

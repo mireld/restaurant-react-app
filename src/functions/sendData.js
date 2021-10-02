@@ -1,4 +1,3 @@
-// import React from 'react';
 import axios from 'axios';
 
 const sendData = (data) => {
@@ -10,7 +9,9 @@ const sendData = (data) => {
     axios.post('http://localhost:4000/reservations', data)
         .then(response => {
         console.log(`response ${response}`);
-        return response
-    })
+        return response})
+        .then(()=>{
+            window.location.reload(false);
+        })
 }
 export default sendData

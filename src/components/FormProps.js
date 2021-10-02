@@ -1,30 +1,36 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
-// import AdapterDateFns from '@mui/lab/AdapterDateFns';
+
+import AdapterDateFns from '@mui/lab/AdapterDateFns';
 // import Stack from '@mui/material/Stack';
-// import LocalizationProvider from '@mui/lab/LocalizationProvider';
-// import DateTimePicker from '@mui/lab/DateTimePicker';
+import LocalizationProvider from '@mui/lab/LocalizationProvider';
+import DateTimePicker from '@mui/lab/DateTimePicker';
 
 export default function FormProps({setDataForm}) {
     const [data, setData] = React.useState({
         "name": "",
         "mail": "",
         "phone" : "",
-        "people" : 0
-        // "bookingDate" : new Date()
+        "people" : 0,
+        "bookingDate" : new Date()
     })
 
     setDataForm(data);
+    
+    let dataForm = {
+        "name": data.name,
+        "mail": data.mail,
+        "phone" : data.phone,
+        "people" : data.people,
+        "bookingDate" : data.bookingDate
+    }
+    const handleDate = (e) => {
+        dataForm.bookingDate = e
+        setData(dataForm)  
+    }
 
     const handleChange = (e) =>{
-        let dataForm = {
-            "name": data.name,
-            "mail": data.mail,
-            "phone" : data.phone,
-            "people" : data.people
-            // "bookingDate" : data.bookingDate
-        }
         if (e.target.id === 'nameIn'){
             dataForm.name = e.target.value
         }
@@ -37,16 +43,13 @@ export default function FormProps({setDataForm}) {
         if (e.target.id === 'peopleIn'){
             dataForm.people = e.target.value
         }
-        // if (e.target.id === 'dateIn'){
-        //     dataForm.bookingDate = e.target.value
-        // }
         setData(dataForm);
     }
     return (
         <Box
         component="form"
         sx={{
-            '& .MuiTextField-root': { m: 1, width: '20ch' },
+            '& .MuiTextField-root': { m: 1, width: '25ch' },
         }}
         noValidate
         autoComplete="off"
@@ -81,18 +84,18 @@ export default function FormProps({setDataForm}) {
             }}
             onChange ={handleChange}
             />
-            {/* <LocalizationProvider dateAdapter={AdapterDateFns}>
-                <Stack spacing={1}>
+        </div>
+        <div>
+            <LocalizationProvider dateAdapter={AdapterDateFns} >
                     <DateTimePicker
                     id = "dateIn"
-                    label="Date-Time picker"
+                    label="Seleccionar Fecha"
                     value={data.bookingDate}
-                    onChange={handleChange}
+                    onChange={handleDate}
                     renderInput={(params) => <TextField {...params} />}
                     />
-         </Stack>
-            </LocalizationProvider> */}
-        </div>
+            </LocalizationProvider>
+        </div>    
         </Box>
   );
 }

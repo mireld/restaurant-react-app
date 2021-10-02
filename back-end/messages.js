@@ -17,15 +17,16 @@ router.get('/', async (req, res) => {
 })
 
 router.post('/', async (req, res) => {
-    const { name, mail, phone, people } = req.body;
+    const { name, mail, phone, people, bookingDate } = req.body;
     const id = uuidv4();
     const docRef = db.collection('reservations').doc(id);
     const date = new Date()
     const dataForm = {
-        name: name,
+        nombre: name,
         email: mail,
         tel: phone,
         personas: people,
+        Reserva: new Date(bookingDate),
         id,
         date
     }
